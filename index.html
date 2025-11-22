@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Authentication Section -->
+    <section id="auth-section">
+        <div class="auth-container">
+
+            <!-- SIGNUP -->
+            <div class="auth-card" id="signup-card">
+                <h2>📝 Sign Up</h2>
+
+                <input type="text" id="signup-name" placeholder="👤 Name">
+                <input type="email" id="signup-email" placeholder="📧 Email">
+                <input type="password" id="signup-password" placeholder="🔒 Password">
+
+                <!-- NEW: Profile Image -->
+                <input type="text" id="signup-image" placeholder="🖼️ Profile Image URL (optional)">
+
+                <button id="signup-btn">✅ Sign Up</button>
+                <p>Already have an account? <span id="go-login">Login 🔑</span></p>
+            </div>
+
+            <!-- LOGIN -->
+            <div class="auth-card" id="login-card" style="display:none;">
+                <h2>🔑 Login</h2>
+
+                <input type="email" id="login-email" placeholder="📧 Email">
+                <input type="password" id="login-password" placeholder="🔒 Password">
+
+                <button id="login-btn">✅ Login</button>
+                <p>Don't have an account? <span id="go-signup">Sign Up 📝</span></p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">PostHub 📱</div>
+        <div class="search-bar"><input type="text" placeholder="🔍 Search posts..." id="search-posts"></div>
+        <div class="user-actions">
+            <span id="welcome-user">👋 Guest</span>
+
+            <!-- LOGOUT -->
+            <button id="logout-btn">🚪</button>
+
+            <button id="theme-toggle">🌙</button>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="main-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul>
+                <li>🏠 Home</li>
+                <li>👤 Profile</li>
+                <li>👥 Friends</li>
+                <li>💬 Messages</li>
+                <li>⚙️ Settings</li>
+            </ul>
+        </aside>
+
+        <!-- Feed Section -->
+        <section id="feed-section">
+
+            <!-- Create Post -->
+            <div class="create-post">
+                <div class="post-header">
+                    <img id="current-user-img" src="assessts/default.jpg" class="profile-pic">
+                    <textarea id="post-text" placeholder="💭 What's on your mind?"></textarea>
+                </div>
+
+                <input type="text" id="post-image" placeholder="🖼️ Image URL (optional)">
+                <button id="post-btn">📤 Post</button>
+            </div>
+
+            <!-- Sort -->
+            <div class="sort-filter">
+                <select id="sort-posts">
+                    <option value="latest">🕒 Latest First</option>
+                    <option value="oldest">⏳ Oldest First</option>
+                    <option value="most-liked">❤️ Most Liked</option>
+                </select>
+            </div>
+
+            <!-- Posts Feed -->
+            <div id="posts-feed"></div>
+
+        </section>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
+
